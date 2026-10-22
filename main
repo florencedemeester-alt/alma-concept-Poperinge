@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" role="img" aria-label="ALMA logo">
+  <rect width="600" height="240" fill="#d9f4f0"/>
+  <text x="300" y="120" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="92" font-weight="700" fill="#2b0505" letter-spacing="10">ALMA</text>
+  <text x="300" y="170" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="22" font-weight="600" fill="#2b0505" letter-spacing="5">EVENT SPACE</text>
+</svg>
