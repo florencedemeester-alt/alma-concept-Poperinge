@@ -1,290 +1,310 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#ffffff">
-<title>ALMA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1ca9e8" />
+  <title>ALMA</title>
+  <style>
+    :root {
+      --alma-blue: #1ca9e8;
+      --alma-red: #3f0708;
+      --white: #ffffff;
+      --soft-blue: #edfaff;
+      --shadow: rgba(19, 52, 64, 0.08);
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-<style>
+    body {
+      margin: 0;
+      font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      background: var(--white);
+      color: var(--alma-red);
+      line-height: 1.6;
+    }
 
-:root{
-  color-scheme:only light;
-  --alma-dark:#2b0505;
-  --white:#ffffff;
-}
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+    header {
+      min-height: 100vh;
+      background: var(--alma-blue);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 26px;
+    }
 
-body{
-  -webkit-text-size-adjust:100%;
-  text-size-adjust:100%;
-  font-family:'Poppins', sans-serif;
-  background:var(--white);
-  color:var(--alma-dark);
-}
+    header img {
+      width: min(92vw, 1200px);
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-/* ---------------- HERO ---------------- */
+    header p {
+      font-size: clamp(14px, 2vw, 20px);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--alma-red);
+      margin-top: 22px;
+      background: rgba(255,255,255,0.12);
+      padding: 10px 18px;
+      border-radius: 999px;
+    }
 
-header{
-  min-height:100vh;
-  min-height:100svh;
-  padding:40px max(20px, 5vw);
-  background:var(--white);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid rgba(63, 7, 8, 0.08);
+      box-shadow: 0 6px 18px rgba(63, 7, 8, 0.04);
+      padding: 18px 14px;
+      text-align: center;
+      z-index: 10;
+    }
 
-header img{
-  width:min(260px, 100%);
-  height:auto;
-  margin-bottom:30px;
-}
+    nav a {
+      margin: 0 18px;
+      color: var(--alma-red);
+      text-decoration: none;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
 
-header p{
-  font-size:clamp(14px, 2.2vw, 20px);
-  line-height:1.6;
-  max-width:760px;
-  letter-spacing:2px;
-}
+    section {
+      padding: clamp(60px, 7vw, 100px) max(20px, 10%);
+      scroll-margin-top: 100px;
+    }
 
-/* ---------------- NAV ---------------- */
+    h2 {
+      margin: 0 0 26px;
+      text-align: center;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.2;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
 
-nav{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px clamp(16px, 3vw, 40px);
-  position:sticky;
-  top:0;
-  background:var(--white);
-  padding:20px;
-  text-align:center;
-  z-index:10;
-}
+    .about {
+      background: var(--soft-blue);
+      text-align: center;
+    }
 
-nav a{
-  margin:0;
-  font-size:clamp(12px, 1.5vw, 16px);
-  white-space:nowrap;
-  text-decoration:none;
-  color:var(--alma-dark);
-  font-weight:600;
-  letter-spacing:2px;
-}
+    .about p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      line-height: 1.8;
+    }
 
-/* ---------------- SECTIONS ---------------- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-section{
-  padding:clamp(56px, 7vw, 100px) max(20px, 10%);
-  scroll-margin-top:100px;
-}
+    .gallery img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-radius: 18px;
+      display: block;
+      box-shadow: 0 10px 22px var(--shadow);
+      transition: transform 0.25s ease;
+    }
 
-h2{
-  font-size:clamp(28px, 4vw, 42px);
-  line-height:1.2;
-  margin-bottom:30px;
-  text-align:center;
-}
+    .gallery img:hover { transform: translateY(-4px); }
 
-/* ---------------- ABOUT ---------------- */
+    .tour-section {
+      padding-top: 18px;
+      padding-bottom: 80px;
+    }
 
-.about{
-  background:#f9fefe;
-  text-align:center;
-}
+    .tour-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: clamp(24px, 3vw, 42px) clamp(22px, 4vw, 50px);
+      background: var(--alma-red);
+      color: var(--white);
+      border-radius: 22px;
+      text-decoration: none;
+      box-shadow: 0 16px 24px rgba(63, 7, 8, 0.12);
+    }
 
-.about p{
-  max-width:700px;
-  margin:auto;
-  font-size:18px;
-}
+    .tour-card h2 {
+      margin: 0 0 8px;
+      text-align: left;
+      color: var(--white);
+      letter-spacing: 0.12em;
+    }
 
-/* ---------------- GALLERY ---------------- */
+    .tour-card p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.9);
+    }
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
-  gap:25px;
-}
+    .tour-arrow {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      line-height: 1;
+    }
 
-.gallery img{
-  display:block;
-  min-width:0;
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:25px;
-  transition:.4s;
-}
+    .contact {
+      background: var(--white);
+      text-align: center;
+    }
 
-@media (hover:hover) and (pointer:fine){
-.gallery img:hover{
-  transform:scale(1.05);
-}
-}
+    .contact p {
+      margin: 12px 0;
+      font-size: 1.05rem;
+    }
 
-/* ---------------- 3D ---------------- */
+    .contact a {
+      color: var(--alma-red);
+      text-decoration: none;
+      font-weight: 700;
+    }
 
-.tour-section{
-  padding-top:30px;
-  padding-bottom:80px;
-}
+    footer {
+      background: var(--alma-red);
+      color: var(--white);
+      text-align: center;
+      padding: 34px 20px;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+    }
 
-.tour-card{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  max-width:1000px;
-  margin:auto;
-  padding:clamp(25px, 4vw, 45px) clamp(22px, 4vw, 50px);
-  background:var(--alma-dark);
-  color:var(--white);
-  border:2px solid var(--alma-dark);
-  border-radius:25px;
-  text-decoration:none;
-  transition:background .2s,color .2s;
-}
-
-.tour-card h2{
-  margin:0 0 8px;
-  text-align:left;
-}
-
-.tour-card p{font-size:18px;}
-.tour-card > div{min-width:0;}
-.tour-arrow{width:36px;height:36px;flex-shrink:0;}
-@media (hover:hover) and (pointer:fine){
-.tour-card:hover{background:#f9fefe;color:var(--alma-dark);}
-}
-.tour-card:focus-visible{outline:3px solid #0099cd;outline-offset:5px;}
-
-/* ---------------- CONTACT ---------------- */
-
-.contact{
-  background:var(--white);
-  text-align:center;
-}
-
-.contact p{
-  font-size:18px;
-  margin-bottom:15px;
-  line-height:1.6;
-  overflow-wrap:anywhere;
-}
-
-.contact a{
-  color:var(--alma-dark);
-  font-weight:600;
-  text-decoration:none;
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer{
-  background:var(--alma-dark);
-  color:white;
-  padding:40px;
-  text-align:center;
-}
-
-/* ---------------- MOBILE ---------------- */
-
-@media(max-width:480px){
-  nav{padding:18px 12px;gap:12px 18px;}
-  section{padding-inline:20px;}
-  .tour-section{padding-top:30px;padding-bottom:56px;}
-  .tour-card{gap:16px;}
-  .about p,.contact p,.tour-card p{font-size:16px;}
-}
-
-@media(prefers-reduced-motion:reduce){
-  .gallery img,.tour-card{transition:none;}
-  .gallery img:hover{transform:none;}
-}
-
-</style>
+    @media (max-width: 600px) {
+      header { padding: 18px; }
+      header p { letter-spacing: 0.12em; }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 18px;
+      }
+      nav a { margin: 0; }
+      section { padding: 70px 6%; }
+      .tour-card { padding: 28px 22px; }
+      .gallery img { height: 260px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <img src="logo.svg" alt="ALMA logo" />
+    <p>Event Space • Private Parties • Creative Gatherings</p>
+  </header>
 
-<!-- HERO -->
-<header>
-  <img src="logo.svg" alt="ALMA logo">
-  <p>EVENT SPACE • PRIVATE PARTIES • CREATIVE GATHERINGS</p>
-</header>
+  <nav>
+    <a href="#about">Over</a>
+    <a href="#gallery">Galerij</a>
+    <a href="3d web.html">3D</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<!-- NAV -->
-<nav>
-  <a href="#about">OVER</a>
-  <a href="#gallery">GALERIJ</a>
-  <a href="3d web.html">3D</a>
-  <a href="#contact">CONTACT</a>
-</nav>
+  <section id="about" class="about">
+    <h2>Over ALMA</h2>
+    <p>
+      ALMA is een hippe eventlocatie waar sfeer, design en beleving samenkomen.<br />
+      Perfect voor verjaardagen, private diners, bedrijfsfeesten en creatieve events.<br />
+      Jij droomt – wij bouwen het decor.
+    </p>
+  </section>
 
-<!-- ABOUT -->
-<section id="about" class="about">
-<h2>OVER ALMA</h2>
-<p>
-ALMA is een hippe eventlocatie waar sfeer, design en beleving samenkomen.<br>
-Perfect voor verjaardagen, private diners, bedrijfsfeesten en creatieve events.<br>
-Jij droomt – wij bouwen het decor.
-</p>
-</section>
+  <section id="gallery">
+    <h2>Galerij</h2>
+    <div class="gallery" id="galleryGrid"></div>
+  </section>
 
-<!-- GALLERY -->
-<section id="gallery">
-<h2>GALERIJ</h2>
-<div class="gallery" id="galleryGrid"></div>
-</section>
+  <section id="tour" class="tour-section" aria-label="ALMA in 3D">
+    <a class="tour-card" href="3d web.html">
+      <div>
+        <h2>3D</h2>
+        <p>Ontdek ALMA in 3D</p>
+      </div>
+      <span class="tour-arrow" aria-hidden="true">↗</span>
+    </a>
+  </section>
 
-<!-- 3D -->
-<section id="tour" class="tour-section" aria-label="ALMA in 3D">
-  <a class="tour-card" href="3d web.html">
-    <div>
-      <h2>3D</h2>
-      <p>Ontdek ALMA in 3D</p>
-    </div>
-    <svg class="tour-arrow" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false"><path d="M7 25 25 7M7 7h18v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
-</section>
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p><a href="tel:+32468234143">0468 23 41 43</a></p>
+    <p>Abeelseweg 232, 8970 Poperinge</p>
+    <p>Instagram: @__alma__concept</p>
+  </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-<h2>CONTACT</h2>
+  <footer>© 2025 ALMA</footer>
 
-<p> <a href="tel:+32468234143">0468 23 41 43</a></p>
-<p> Abeelseweg 232, 8970 Poperinge</p>
-<p> Instagram: @__alma__concept</p>
+  <script>
+    const gallery = document.getElementById('galleryGrid');
+    const imageNames = ['image1.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg', 'image5.jpg', 'image6.jpg', 'image7.jpg', 'image8.jpg'];
 
-</section>
-
-<footer>
-© 2025 ALMA
-</footer>
-
-<!-- AUTO GALLERY SCRIPT -->
-<script>
-const gallery = document.getElementById("galleryGrid");
-
-for(let i=1;i<=8;i++){
-  const img=document.createElement("img");
-  img.src=`image${i}.jpg`;
-  img.alt=`ALMA image ${i}`;
-  gallery.appendChild(img);
-}
-</script>
-
+    imageNames.forEach((src, index) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `ALMA image ${index + 1}`;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      gallery.appendChild(img);
+    });
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
